@@ -1,5 +1,61 @@
-console.log("hej med jer")
+class Cards {
+   constructor(value, name){
+    this.value = value;
+    this.name = name;
+    
+   }
+   
+   fåkortfrem(){
+    let so = document.createElement('div');
+    
+    let parent = document.querySelector('#parent');
+    parent.appendChild(so)
+    let w = document.createElement('p');
+    let o = document.createElement('p');
+   
+   let button = document.createElement('button')
+        button.innerText = 'slet'
+        button.id = 'mainButton'
+        button.addEventListener('click', () => {
+        so.remove(); })
 
-let du = "Hej"
-let mig = "dig"
-console.log(du+mig)
+    w.textContent = Player1;
+    so.appendChild(w)
+
+    o.textContent = Player2;
+    so.appendChild(o) 
+
+    so.appendChild(button)
+ 
+   
+   }
+   
+}
+
+    let cardStack = [];
+
+for (let index = 2; index < 15; index++) {
+    cardStack.push(new Cards (index,"Hearts"))
+    cardStack.push(new Cards (index,"Clubs"))
+    cardStack.push(new Cards (index,"Diamonds"))
+    cardStack.push(new Cards (index,"Clovers"))
+}
+// Math.random() giver et tal mellem 0 og 1 - hvis vi trækker det fra 0.5 giver det et tal mellem -0.5 og 0.5.
+cardStack = cardStack.sort(() => 0.5 - Math.random()); 
+
+
+function splitArr1(arr, len) {
+    var result = [];
+    for (var i = 0; i < arr.length; i += 26) {
+      result.push(arr.slice(i, i + len));
+    }
+    return result;
+  }
+
+let Player1 = splitArr1(cardStack, 26)[0]
+let Player2 = splitArr1(cardStack, 26)[1]
+console.log(Player1.value)
+console.log(typeof Player1)
+
+
+
