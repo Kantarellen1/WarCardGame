@@ -1,0 +1,5 @@
+console.log("hej med jer")
+
+let du = "Hej"
+let mig = "dig"
+console.log(du+mig)
