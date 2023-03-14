@@ -63,3 +63,32 @@ for (let i = 0; i < Player2.length; i++) {
   }
 }
 
+let i = 0
+function hvemVinder(){
+
+  if (Player1[i].value < Player2[i].value){
+    console.log("2 vinder" +Player1[i].value + Player2[i].value)
+    Player2.push(Player1[i])
+    Player2.push(Player2[i])
+    Player1.splice(i, 1);
+    Player2.splice(i, 1);
+
+   // her skal vinderen have de 2 indexer på sig 
+  }
+
+else if (Player1[i].value > Player2[i].value){
+  console.log("1 vinder" +Player1[i].value + Player2[i].value)
+  Player1.push(Player1[i])
+  Player1.push(Player2[i])
+  Player1.splice(i, 1)
+  Player2.splice(i, 1)
+}
+else {
+  console.log("DER SKU KRIG")
+}
+console.log(Player1)
+console.log(Player2)
+
+}
+
+
