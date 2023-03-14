@@ -45,7 +45,7 @@ for (let i = 0; i < Player1.length; i++) {
   player1Cards.appendChild(card1);
   
 
-}
+  }
 }
 
 const player2Cards = document.getElementById("player2-cards");
@@ -60,6 +60,6 @@ for (let i = 0; i < Player2.length; i++) {
   card2.classList.add("card");
   card2.textContent = `${Player2[i].value} of ${Player2[i].name}`;
   player2Cards.appendChild(card2);
-}
+  }
 }
 
