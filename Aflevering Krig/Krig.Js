@@ -7,10 +7,16 @@ class Cards {
    }
 }
 let cardStack = [];
-let back = src ="C:\Users\soere\Desktop\Skole Søren\KrigspilGit\oop1-projekt-uge-11-gruppe-5-1\Aflevering Krig.png"
+var back = document.createElement("img");
+var backParent = document.getElementById("player1-cards");
+back.id = "id";
+back.className = "class";
+back.src = "C:\Users\soere\Desktop\Skole Søren\KrigspilGit\oop1-projekt-uge-11-gruppe-5-1\Aflevering Krig\Kort\back_of_cards.png "          // back.src = "back URL/PATH"
+backParent.appendChild(back);
 
 
-for (let index = 1; index < 14; index++) {
+
+for (let index = 2; index < 15; index++) {
     cardStack.push(new Cards (index,"Hearts",back))
     cardStack.push(new Cards (index,"Clubs",back))
     cardStack.push(new Cards (index,"Diamonds",back))
@@ -68,7 +74,7 @@ function showCard2(){
 let i = 0
 function hvemVinder(){
 
-  if (Player1[i].value < Player2[i].value|| Player2[i].value == 1){
+  if (Player1[i].value < Player2[i].value){
     console.log("2 vinder" )
     Player2.push(Player1[i])
     Player2.push(Player2[i])
@@ -78,7 +84,7 @@ function hvemVinder(){
    // her skal vinderen have de mk2 indexer på sig 
   }
 
-else if (Player1[i].value > Player2[i].value || Player1[i].value == 1){
+else if (Player1[i].value > Player2[i].value ){
   console.log("1 vinder" )
   Player1.push(Player1[i])
   Player1.push(Player2[i])
@@ -93,6 +99,8 @@ console.log(Player1)
 console.log(Player2)
 
 }
-function krig(){ console.log("Den er connected")
- 
+function krig()
+{ 
+
+  console.log("Den er connected")
 }
