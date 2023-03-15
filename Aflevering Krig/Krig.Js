@@ -1,17 +1,20 @@
 class Cards {
-   constructor(value, name){
+   constructor(value, name,back){
     this.value = value;
     this.name = name;
+    this.back = back
     
    }
 }
 let cardStack = [];
+let back = src ="C:\Users\soere\Desktop\Skole Søren\KrigspilGit\oop1-projekt-uge-11-gruppe-5-1\Aflevering Krig.png"
+
 
 for (let index = 1; index < 14; index++) {
-    cardStack.push(new Cards (index,"Hearts"))
-    cardStack.push(new Cards (index,"Clubs"))
-    cardStack.push(new Cards (index,"Diamonds"))
-    cardStack.push(new Cards (index,"Clovers"))
+    cardStack.push(new Cards (index,"Hearts",back))
+    cardStack.push(new Cards (index,"Clubs",back))
+    cardStack.push(new Cards (index,"Diamonds",back))
+    cardStack.push(new Cards (index,"Clovers",back))
 }
 // Math.random() giver et tal mellem 0 og 1 - hvis vi trækker det fra 0.5 giver det et tal mellem -0.5 og 0.5.
 cardStack = cardStack.sort(() => 0.5 - Math.random()); 
@@ -90,6 +93,6 @@ console.log(Player1)
 console.log(Player2)
 
 }
-function krig(){
-  console.log("Den er connected")
+function krig(){ console.log("Den er connected")
+ 
 }
