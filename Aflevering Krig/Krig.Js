@@ -16,37 +16,36 @@ for (let index = 1; index < 14; index++) {
 // Math.random() giver et tal mellem 0 og 1 - hvis vi trækker det fra 0.5 giver det et tal mellem -0.5 og 0.5.
 cardStack = cardStack.sort(() => 0.5 - Math.random()); 
 
-
+// Arrayet der splitter de 2 dæk kort ud på de to spillere
 function splitArr1(arr, len) {
     var result = [];
     for (var i = 0; i < arr.length; i += 26) {
       result.push(arr.slice(i, i + len));
-      
     }
-    return result;
-  }
+  return result;
+}
 
 let Player1 = splitArr1(cardStack, 26)[0];
 
 let Player2 = splitArr1(cardStack, 26)[1];
+
 console.log(Player1)
+
 console.log(Player2)
 
+// Den der er div for showCard, addEventListener er tilføjet for at omgå at den er nul samtidig med defer i HTML
 const player1Cards = document.getElementById("player1-cards");
 if (player1Cards){
   player1Cards.addEventListener('', () => {
     alert('');
   });
 }
+
 function showCard(){
-for (let i = 0; i < Player1.length; i++) {
   const card1 = document.createElement("div");
   card1.classList.add("card");
   card1.textContent = `${Player1[i].value} of ${Player1[i].name}`;
   player1Cards.appendChild(card1);
-  
-
-  }
 }
 
 const player2Cards = document.getElementById("player2-cards");
@@ -55,13 +54,12 @@ if (player2Cards){
     alert('');
   });
 }
+
 function showCard2(){
-for (let i = 0; i < Player2.length; i++) {
   const card2 = document.createElement("div");
   card2.classList.add("card");
   card2.textContent = `${Player2[i].value} of ${Player2[i].name}`;
   player2Cards.appendChild(card2);
-  }
 }
 
 let i = 0
