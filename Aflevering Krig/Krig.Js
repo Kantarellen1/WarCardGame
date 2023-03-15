@@ -51,7 +51,7 @@ for (let i = 0; i < Player1.length; i++) {
 
   }
 }
-
+ 
 const player2Cards = document.getElementById("player2-cards");
 if (player2Cards){
   player2Cards.addEventListener('', () => {
@@ -77,7 +77,7 @@ function hvemVinder(){
     Player1.splice(i, 1);
     Player2.splice(i, 1);
 
-   // her skal vinderen have de 2 indexer på sig 
+   // her skal vinderen have de mk2 indexer på sig 
   }
 
 else if (Player1[i].value > Player2[i].value || Player1[i].value == 1){
