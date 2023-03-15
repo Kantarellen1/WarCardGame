@@ -7,7 +7,7 @@ class Cards {
 }
 let cardStack = [];
 
-for (let index = 2; index < 15; index++) {
+for (let index = 1; index < 14; index++) {
     cardStack.push(new Cards (index,"Hearts"))
     cardStack.push(new Cards (index,"Clubs"))
     cardStack.push(new Cards (index,"Diamonds"))
@@ -29,7 +29,8 @@ function splitArr1(arr, len) {
 let Player1 = splitArr1(cardStack, 26)[0];
 
 let Player2 = splitArr1(cardStack, 26)[1];
-
+console.log(Player1)
+console.log(Player2)
 
 const player1Cards = document.getElementById("player1-cards");
 if (player1Cards){
@@ -66,8 +67,8 @@ for (let i = 0; i < Player2.length; i++) {
 let i = 0
 function hvemVinder(){
 
-  if (Player1[i].value < Player2[i].value){
-    console.log("2 vinder" +Player1[i].value + Player2[i].value)
+  if (Player1[i].value < Player2[i].value|| Player2[i].value == 1){
+    console.log("2 vinder" )
     Player2.push(Player1[i])
     Player2.push(Player2[i])
     Player1.splice(i, 1);
@@ -76,8 +77,8 @@ function hvemVinder(){
    // her skal vinderen have de 2 indexer på sig 
   }
 
-else if (Player1[i].value > Player2[i].value){
-  console.log("1 vinder" +Player1[i].value + Player2[i].value)
+else if (Player1[i].value > Player2[i].value || Player1[i].value == 1){
+  console.log("1 vinder" )
   Player1.push(Player1[i])
   Player1.push(Player2[i])
   Player1.splice(i, 1)
@@ -85,10 +86,12 @@ else if (Player1[i].value > Player2[i].value){
 }
 else {
   console.log("DER SKU KRIG")
+  krig()
 }
 console.log(Player1)
 console.log(Player2)
 
 }
-
-
+function krig(){
+  console.log("Den er connected")
+}
