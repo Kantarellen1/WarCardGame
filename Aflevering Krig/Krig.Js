@@ -60,7 +60,7 @@ for (let i = 0; i < Player2.length; i++) {
   card2.classList.add("card");
   card2.textContent = `${Player2[i].value} of ${Player2[i].name}`;
   player2Cards.appendChild(card2);
-   }
+  }
 }
 
 let i = 0
