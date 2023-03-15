@@ -96,4 +96,3 @@ console.log(Player2)
 function krig(){ console.log("Den er connected")
  
 }
-//hej 
