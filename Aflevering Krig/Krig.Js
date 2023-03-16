@@ -56,17 +56,7 @@ function showCard(){
   card1.textContent = `${Player1[i].value} of ${Player1[i].name}`;
   player1Cards.appendChild(card1);
 
-  
-  if (Player1[i].value < Player2[i].value){
-  function removeCard1(){
-  card1.removeChild(list.firstElementChild);
-  }
-  return removeCard1()
 }
-}
-
-
- 
  /*var backParent = document.getElementById("player1-cards");
  back.id = "backid";
  back.className = "class";
@@ -168,7 +158,7 @@ function krig()
     
       console.log("Krig")
     }
-    
+krig()    
 
     
     
