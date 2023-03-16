@@ -18,10 +18,6 @@ var frontParent = document.getElementById("player1-cards");
  frontParent.appendChild(front);*/
 
  
-
-
-
-
 for (let index = 2; index < 15; index++) {
     cardStack.push(new Cards (index,"Hearts",back,front))
     cardStack.push(new Cards (index,"Clubs",back,front))
@@ -59,6 +55,7 @@ function showCard(){
   card1.classList.add("card");
   card1.textContent = `${Player1[i].value} of ${Player1[i].name}`;
   player1Cards.appendChild(card1);
+
   
   if (Player1[i].value < Player2[i].value){
   function removeCard1(){
@@ -119,38 +116,57 @@ else {
 console.log(Player1)
 console.log(Player2)
 
-}
+} 
+ 
+
 function krig()
     { 
+
       let btn = document.createElement("button");
       btn.innerHTML = "Krig";
       document.body.appendChild(btn);
       btn.addEventListener("click", hvemVinder)
 
+
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
+      let btn = document.createElement("button");
+      btn.innerHTML = "Krig";
+      document.body.appendChild(btn);
+      btn.addEventListener("click", hvemVinder)
+
+      
+      
             card1.textContent = 
                 `${Player1[0].value} of 
-                ${Player1[i].name}
+                ${Player1[0].name}
                 ${Player1[1].value} of 
-                ${Player1[i].name}
+                ${Player1[1].name}
                 ${Player1[2].value} of 
-                ${Player1[i].name}`
+                ${Player1[2].name}`
           
             card2.textContent =
                 `${Player2[0].value} of 
-                ${Player2[i].name}
+                ${Player2[0].name}
                 ${Player2[1].value} of 
-                ${Player2[i].name}
+                ${Player2[1].name}
                 ${Player2[2].value} of 
-                ${Player2[i].name}`
-                 
+                ${Player2[2].name}`
       
+      Player1.push(Player1[i])
+      Player1.push(Player2[i])
+      Player1.splice(i, 1)
+      Player2.splice(i, 1)
+
+      Player2.push(Player1[i])
+      Player2.push(Player2[i])
+      Player1.splice(i, 1);
+      Player2.splice(i, 1);
               
       player1Cards.appendChild(card1);
       player2Cards.appendChild(card2);
     
-      console.log("Den er connected")
+      console.log("Krig")
     }
     
 
