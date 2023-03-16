@@ -157,3 +157,4 @@ function krig()
     
       console.log("Krig")
     }
+krig()
