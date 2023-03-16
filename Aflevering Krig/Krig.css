@@ -4,3 +4,8 @@
 .player2-cards{
     float: right;
 }
+.class{
+    max-width: 400px;
+    max-height: 400px;
+    
+}
