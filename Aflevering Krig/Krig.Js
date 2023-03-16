@@ -112,49 +112,82 @@ console.log(Player2)
 
 } 
  
-
+let krigplayer1=[];
+      let krigplayer2=[];
+      let bordet = [];
 function krig()
     { 
-     
-
+     bordet.push(Player1[i])
+     bordet.push(Player2[i])
+      
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
       let btn = document.createElement("button");
       btn.innerHTML = "Krig";
       document.body.appendChild(btn);
-      btn.addEventListener("click", hvemVinder)
-
-      
-      
+      btn.addEventListener("click", hvemVinderKrigen)
             card1.textContent = 
-                `${Player1[0].value} of 
-                ${Player1[0].name}
-                ${Player1[1].value} of 
+                `${Player1[1].value} of 
                 ${Player1[1].name}
                 ${Player1[2].value} of 
-                ${Player1[2].name}`
+                ${Player1[2].name}
+                ${Player1[3].value} of 
+                ${Player1[3].name} `
           
             card2.textContent =
-                `${Player2[0].value} of 
-                ${Player2[0].name}
-                ${Player2[1].value} of 
+                `${Player2[1].value} of 
                 ${Player2[1].name}
                 ${Player2[2].value} of 
-                ${Player2[2].name}`
+                ${Player2[2].name}
+                ${Player2[3].value} of 
+                ${Player2[23].name}`
       
-      Player1.push(Player1[i])
-      Player1.push(Player2[i])
-      Player1.splice(i, 1)
-      Player2.splice(i, 1)
+      krigplayer1.push(Player1[0])
+      krigplayer1.push(Player1[1])
+      krigplayer1.push(Player1[2])
+      
 
-      Player2.push(Player1[i])
-      Player2.push(Player2[i])
-      Player1.splice(i, 1);
-      Player2.splice(i, 1);
-              
+      krigplayer2.push(Player2[0])
+      krigplayer2.push(Player2[1])
+      krigplayer2.push(Player2[2])
+      
+     
+    
       player1Cards.appendChild(card1);
       player2Cards.appendChild(card2);
-    
-      console.log("Krig")
-    }
-krig()
+
+console.log(krigplayer1)
+console.log(krigplayer2)
+console.log(bordet)
+
+        }
+
+function hvemVinderKrigen(){
+ 
+ 
+for (let i = 0; i < krigplayer1.length; i++) {
+  if (krigplayer1[i].value>krigplayer2[i].value){
+   Player1.push(bordet[0])
+   Player1.push(bordet[1])
+   Player1.push(Player2[1])
+   Player1.push(Player2[2])
+   Player1.push(Player2[3])
+   Player2.splice(i, 3)
+   
+   
+
+    console.log("1 vinder krigen")
+  }
+  else {
+    Player2.push(bordet[0])
+   Player2.push(bordet[1])
+   Player2.push(Player2[1])
+   Player2.push(Player2[2])
+   Player2.push(Player2[3])
+   Player1.splice(i, 3)
+}
+}
+console.log(Player1)
+console.log(Player2)
+}
+//hvemVinderKrigen()
