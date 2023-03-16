@@ -176,6 +176,7 @@ function krig()
       console.log("Krig")
     }
     
+    
 
     
     
