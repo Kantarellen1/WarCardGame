@@ -49,13 +49,22 @@ const player1Cards = document.getElementById("player1-cards");
 const player2Cards = document.getElementById("player2-cards");
 
 
+let card1 = null;
 
 function showCard(){
-  const card1 = document.createElement("div")
+  if (card1 !== null) {
+    card1.remove();
+  }
+  card1 = document.createElement("div")
   card1.classList.add("card");
   card1.textContent = `${Player1[i].value} of ${Player1[i].name}`;
+  card1.addEventListener("click", function() {
+    card1.remove();
+    card1 = null;
+  });  
+  
+  
   player1Cards.appendChild(card1);
-
 }
  /*var backParent = document.getElementById("player1-cards");
  back.id = "backid";
@@ -63,11 +72,20 @@ function showCard(){
  back.src = "kort/back_of_cards.png"     // back.src = "back URL/PATH"
  backParent.appendChild(back);*/
 
+let card2 = null;
 
 function showCard2(){
-  const card2 = document.createElement("div");
+  if (card2 !== null) {
+    card2.remove();
+  }
+  card2 = document.createElement("div");
   card2.classList.add("card");
   card2.textContent = `${Player2[i].value} of ${Player2[i].name}`;
+  card2.addEventListener("click", function() {
+    card2.remove();
+    card2 = null;
+  }); 
+
   player2Cards.appendChild(card2);
 
   /*var back = document.createElement("img");
@@ -83,7 +101,7 @@ let i = 0
 function hvemVinder(){
 
   if (Player1[i].value < Player2[i].value){
-    console.log("2 vinder" )
+    System.out.println("2 Vinder")
     Player2.push(Player1[i])
     Player2.push(Player2[i])
     Player1.splice(i, 1);
@@ -120,7 +138,6 @@ function krig()
 
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
-      let btn = document.createElement("button");
       btn.innerHTML = "Krig";
       document.body.appendChild(btn);
       btn.addEventListener("click", hvemVinder)
@@ -143,7 +160,7 @@ function krig()
                 ${Player2[2].value} of 
                 ${Player2[2].name}`
       
-      Player1.push(Player1[i])
+      /*Player1.push(Player1[i])
       Player1.push(Player2[i])
       Player1.splice(i, 1)
       Player2.splice(i, 1)
@@ -151,14 +168,14 @@ function krig()
       Player2.push(Player1[i])
       Player2.push(Player2[i])
       Player1.splice(i, 1);
-      Player2.splice(i, 1);
+      Player2.splice(i, 1);*/
               
       player1Cards.appendChild(card1);
       player2Cards.appendChild(card2);
     
       console.log("Krig")
     }
-krig()    
+    
 
     
     
