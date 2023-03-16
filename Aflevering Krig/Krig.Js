@@ -55,16 +55,20 @@ const player2Cards = document.getElementById("player2-cards");
 
 
 function showCard(){
-  const card1 = document.createElement("div");
+  const card1 = document.createElement("div")
   card1.classList.add("card");
   card1.textContent = `${Player1[i].value} of ${Player1[i].name}`;
   player1Cards.appendChild(card1);
-
-  if (card1.hasChildNodes()) {
-    card1.removeChild(card1.children[0]);
+  
+  if (Player1[i].value < Player2[i].value){
+  function removeCard1(){
+  card1.removeChild(list.firstElementChild);
   }
+  return removeCard1()
+}
+}
 
- ;
+
  
  /*var backParent = document.getElementById("player1-cards");
  back.id = "backid";
@@ -72,7 +76,7 @@ function showCard(){
  back.src = "kort/back_of_cards.png"     // back.src = "back URL/PATH"
  backParent.appendChild(back);*/
 
-}
+
 function showCard2(){
   const card2 = document.createElement("div");
   card2.classList.add("card");
@@ -97,7 +101,7 @@ function hvemVinder(){
     Player2.push(Player2[i])
     Player1.splice(i, 1);
     Player2.splice(i, 1);
-
+    
    // her skal vinderen have de mk2 indexer på sig 
   }
 
@@ -118,9 +122,11 @@ console.log(Player2)
 }
 function krig()
     { 
-      
-      
-      const but =   document.createElement("div")
+      let btn = document.createElement("button");
+      btn.innerHTML = "Krig";
+      document.body.appendChild(btn);
+      btn.addEventListener("click", hvemVinder)
+
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
             card1.textContent = 
@@ -138,19 +144,15 @@ function krig()
                 ${Player2[i].name}
                 ${Player2[2].value} of 
                 ${Player2[i].name}`
-       
-
-       const button = document.createElement('button')
-       button.innerText = 'KRIG!'   
-       
-       button.addEventListener('click', () => {})
-       
-       but.body.appendChild(button); 
-               
-       player1Cards.appendChild(card1);
-       player2Cards.appendChild(card2);
+                 
+      
+              
+      player1Cards.appendChild(card1);
+      player2Cards.appendChild(card2);
     
       console.log("Den er connected")
     }
-krig()
+    
 
+    
+    
