@@ -35,7 +35,7 @@ function splitArr1(arr, len) {
     }
   return result;
 }
-
+// De splittede Array
 let Player1 = splitArr1(cardStack, 26)[0];
 
 let Player2 = splitArr1(cardStack, 26)[1];
@@ -44,12 +44,12 @@ console.log(Player1)
 
 console.log(Player2)
 
-// Den der er div for showCard, addEventListener er tilføjet for at omgå at den er nul samtidig med defer i HTML
+// Den der er div for showCard
 const player1Cards = document.getElementById("player1-cards");
 const player2Cards = document.getElementById("player2-cards");
 
 
-
+// Card1 = null; er for at definere som nul så vi kan slette den ved bruge af remove !== tjekker om de er lige eller ej
 let card1 = null;
 
 function showCard(){
@@ -91,11 +91,13 @@ function showCard(){
    player2Cards.appendChild(card2);
  }
 
-let i = 0
-function hvemVinder(){
+//funktionen for at tjekke hvem der vinder tjekker værdien af hvert kort og om der er krig eller ej 
+
+ let i = 0
+function whoWins(){
 
   if (Player1[i].value < Player2[i].value){
-    console.log("2 vinder" )
+    console.log("Player 2 Wins!" )
     Player2.push(Player1[i])
     Player2.push(Player2[i])
     Player1.splice(i, 1);
@@ -105,35 +107,37 @@ function hvemVinder(){
   }
 
 else if (Player1[i].value > Player2[i].value ){
-  console.log("1 vinder" )
+  console.log("Player 1 Wins" )
   Player1.push(Player1[i])
   Player1.push(Player2[i])
   Player1.splice(i, 1)
   Player2.splice(i, 1)
 }
 else {
-  console.log("DER SKU KRIG")
-  krig()
+  console.log("WARTIME")
+  war()
 }
 console.log(Player1)
 console.log(Player2)
 console.log(Player1.length+Player2.length)
 } 
  
-      let krigplayer1=[];
-      let krigplayer2=[];
-      let bordet = [];
-function krig()
+      let warPlayer1=[];
+      let warplayer2=[];
+      let table = [];
+
+//funktionen for Krig når krig bliver aktiveret trækker den 3 kort til hver spiller      
+function war()
     { 
 
-     bordet.push(Player1[i])
-     bordet.push(Player2[i])
+     table.push(Player1[i])
+     table.push(Player2[i])
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
       let btn = document.createElement("button");
-      btn.innerHTML = "Krig";
+      btn.innerHTML = "War";
       document.body.appendChild(btn);
-      btn.addEventListener("click", hvemVinderKrigen)
+      btn.addEventListener("click", whoWinsTheWar)
             card1.textContent = 
                 `${Player1[1].value} of 
                 ${Player1[1].name}
@@ -151,15 +155,15 @@ function krig()
                 ${Player2[3].name}`
       
      
-      krigplayer1.push(Player1[1])
-      krigplayer1.push(Player1[2])
-      krigplayer1.push(Player1[3])
+      warPlayer1.push(Player1[1])
+      warPlayer1.push(Player1[2])
+      warPlayer1.push(Player1[3])
       
 
       
-      krigplayer2.push(Player2[1])
-      krigplayer2.push(Player2[2])
-      krigplayer2.push(Player2[3])
+      warplayer2.push(Player2[1])
+      warplayer2.push(Player2[2])
+      warplayer2.push(Player2[3])
       
      
     
@@ -167,19 +171,21 @@ function krig()
       player2Cards.appendChild(card2);
 
 
-console.log(krigplayer1)
-console.log(krigplayer2)
-console.log(bordet)
+console.log(warPlayer1)
+console.log(warplayer2)
+console.log(table)
 console.log(Player1.length+Player2.length)
          }
 
-function hvemVinderKrigen(){
+//Funktionen for at tjekke hvem der vinder krigen, virker som den der tjekker for en bare bedst ud af 3 nu
+
+function whoWinsTheWar(){
  
  
-    for (let i = 0; i < krigplayer1.length; i++) {
-      if (krigplayer1[i].value>krigplayer2[i].value){
-      Player1.push(bordet[0])
-      Player1.push(bordet[1])
+    for (let i = 0; i < warPlayer1.length; i++) {
+      if (warPlayer1[i].value>warplayer2[i].value){
+      Player1.push(table[0])
+      Player1.push(table[1])
       Player1.push(Player2[1])
       Player1.push(Player2[2])
       Player1.push(Player2[3])
@@ -187,11 +193,11 @@ function hvemVinderKrigen(){
       
       
 
-        console.log("1 vinder krigen")
+        console.log("Player 1 wins the war")
       }
-      else if (krigplayer1[i].value>krigplayer2[i].value) {
-        Player2.push(bordet[0])
-      Player2.push(bordet[1])
+      else if (warPlayer1[i].value>warplayer2[i].value) {
+        Player2.push(table[0])
+      Player2.push(table[1])
       Player2.push(Player2[1])
       Player2.push(Player2[2])
       Player2.push(Player2[3])
@@ -201,7 +207,7 @@ function hvemVinderKrigen(){
     krig()
     console.log(Player1)
     console.log(Player2)
-    console.log("Krig Igen")
+    console.log("War again")
     console.log(Player1.length+Player2.length)
         }
     
