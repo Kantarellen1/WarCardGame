@@ -8,7 +8,7 @@ class Cards {
    }
 }
 let cardStack = [];
- var back = document.createElement("img");
+var back = document.createElement("img");
 var front = document.createElement("img");
 /*
 var frontParent = document.getElementById("player1-cards");
@@ -49,7 +49,6 @@ const player1Cards = document.getElementById("player1-cards");
 const player2Cards = document.getElementById("player2-cards");
 
 
-let card1 = null;
 
 function showCard(){
   if (card1 !== null) {
@@ -72,30 +71,21 @@ function showCard(){
  back.src = "kort/back_of_cards.png"     // back.src = "back URL/PATH"
  backParent.appendChild(back);*/
 
-let card2 = null;
 
 function showCard2(){
-  if (card2 !== null) {
-    card2.remove();
-  }
-  card2 = document.createElement("div");
+  const card2 = document.createElement("div");
   card2.classList.add("card");
   card2.textContent = `${Player2[i].value} of ${Player2[i].name}`;
-  card2.addEventListener("click", function() {
-    card2.remove();
-    card2 = null;
-  }); 
-
   player2Cards.appendChild(card2);
-}
+
   /*var back = document.createElement("img");
   var backParent = document.getElementById("player2-cards");
   back.id = "backid";
   back.className = "class";
-  back.src = "kort/back_of_cards.png"     //back.src = "back URL/PATH"
+  back.src = "kort/back_of_cards.png"     // back.src = "back URL/PATH"
   backParent.appendChild(back);*/
 
-
+}
 
 let i = 0
 function hvemVinder(){
@@ -123,52 +113,65 @@ else {
 }
 console.log(Player1)
 console.log(Player2)
-
+console.log(Player1.length+Player2.length)
 } 
  
-
+      let krigplayer1=[];
+      let krigplayer2=[];
+      let bordet = [];
 function krig()
     { 
 
-      let btn = document.createElement("button");
-      btn.innerHTML = "Krig";
-      document.body.appendChild(btn);
-      btn.addEventListener("click", hvemVinder)
-
-
+     bordet.push(Player1[i])
+     bordet.push(Player2[i])
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
       btn.innerHTML = "Krig";
       document.body.appendChild(btn);
-      btn.addEventListener("click", hvemVinder)
-
-      
-      
+      btn.addEventListener("click", hvemVinderKrigen)
             card1.textContent = 
-                `${Player1[0].value} of 
-                ${Player1[0].name}
-                ${Player1[1].value} of 
+                `${Player1[1].value} of 
                 ${Player1[1].name}
                 ${Player1[2].value} of 
-                ${Player1[2].name}`
+                ${Player1[2].name}
+                ${Player1[3].value} of 
+                ${Player1[3].name} `
           
             card2.textContent =
-                `${Player2[0].value} of 
-                ${Player2[0].name}
-                ${Player2[1].value} of 
+                `${Player2[1].value} of 
                 ${Player2[1].name}
                 ${Player2[2].value} of 
-                ${Player2[2].name}`
+                ${Player2[2].name}
+                ${Player2[3].value} of 
+                ${Player2[3].name}`
+      
+     
+      krigplayer1.push(Player1[1])
+      krigplayer1.push(Player1[2])
+      krigplayer1.push(Player1[3])
+      
+
+      
+      krigplayer2.push(Player2[1])
+      krigplayer2.push(Player2[2])
+      krigplayer2.push(Player2[3])
+      
+      Player1.push(Player1[i])
+      Player1.push(Player2[i])
+      Player1.splice(i, 1)
+      Player2.splice(i, 1)
+
+      Player2.push(Player1[i])
+      Player2.push(Player2[i])
+      Player1.splice(i, 1);
+      Player2.splice(i, 1);
               
       player1Cards.appendChild(card1);
       player2Cards.appendChild(card2);
     
       console.log("Krig")
     }
-    
-
-    
-    
+krig()    
 
     
     
