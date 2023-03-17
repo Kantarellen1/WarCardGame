@@ -159,16 +159,6 @@ function krig()
                 ${Player2[1].name}
                 ${Player2[2].value} of 
                 ${Player2[2].name}`
-      
-      /*Player1.push(Player1[i])
-      Player1.push(Player2[i])
-      Player1.splice(i, 1)
-      Player2.splice(i, 1)
-
-      Player2.push(Player1[i])
-      Player2.push(Player2[i])
-      Player1.splice(i, 1);
-      Player2.splice(i, 1);*/
               
       player1Cards.appendChild(card1);
       player2Cards.appendChild(card2);
@@ -177,10 +167,7 @@ function krig()
     }
     
 
-    function ace_of_hearts{
-      if(Player1 === Player2)
-      console.log("jalla")
-    }
+    
     
 
     
