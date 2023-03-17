@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>War Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>Krig!</h1>
+    <form class="form">
+        <label for="player1">Spiller 1: </label><br>
+        <input type="text" id="player1" name="player1"><br>
+        <label for="player2">Spiller 2: </label><br>
+        <input type="text" id="player2" name="player2">
+        <input type="submit" value="Submit navne">
+    </form>
+
+    <div class="container">
+
+        <div class="player">
+            <h2 id="player1Name"></h2>
+            <div class="card">
+                <p id="player1CardValue">Værdi: </p>
+                <p id="player1CardSuit">Kulør: </p>
+            </div>
+            <p id="player1CardCount"></p>
+            <p id="player1Wins">Sejre: 0</p>
+        </div>
+        <div class="player">
+            <h2 id="player2Name"></h2>
+            <div class="card">
+                <p id="player2CardValue">Værdi: </p>
+                <p id="player2CardSuit">Kulør: </p>
+            </div>
+            <p id="player2CardCount"></p>
+            <p id="player2Wins">Sejre: 0</p>
+        </div>
+
+
+    </div>
+
+    <div class="output" id="output">Spil ved at trykke på knappen nedenunder</div>
+
+    <div class="btn">
+        <button class="btn" id="playButton">Spil</button>
+    </div>
+    <div class="btn">
+        <button class="btn" id="playButton2">Spil 5000 gange</button>
+    </div>
+
+    <script src="war.js"></script>
