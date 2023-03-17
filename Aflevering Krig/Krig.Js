@@ -87,21 +87,21 @@ function showCard2(){
   }); 
 
   player2Cards.appendChild(card2);
-
+}
   /*var back = document.createElement("img");
   var backParent = document.getElementById("player2-cards");
   back.id = "backid";
   back.className = "class";
-  back.src = "kort/back_of_cards.png"     // back.src = "back URL/PATH"
+  back.src = "kort/back_of_cards.png"     //back.src = "back URL/PATH"
   backParent.appendChild(back);*/
 
-}
+
 
 let i = 0
 function hvemVinder(){
 
   if (Player1[i].value < Player2[i].value){
-    System.out.println("2 Vinder")
+    console.log("2 Vinder")
     Player2.push(Player1[i])
     Player2.push(Player2[i])
     Player1.splice(i, 1);
@@ -176,6 +176,11 @@ function krig()
       console.log("Krig")
     }
     
+
+    function ace_of_hearts{
+      if(Player1 === Player2)
+      console.log("jalla")
+    }
     
 
     
