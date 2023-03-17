@@ -1,11 +1,35 @@
+@import url(Kort/);
+
+.body{
+background-color: #000;
+flex: auto;
+content: url(kort);
+}
+
+.showCard,.showCard2,.vinder{
+    padding: 10px 16px;
+    font-size: 18px;
+    border: 2px solid #000;
+    background: rgb(142, 43, 43);
+    font-weight: bold;
+}
+
+.showCard:hover{
+    background: #fff;
+    color: #ffff;   
+}
+.showCard2
+{
+    padding: 10px 16px;
+    font-size: 18px;
+    border: 2px solid #000;
+    background: rgb(18, 63, 225);
+    font-weight: bold;
+}
+.showCard:hover{
+    background: #fff;
+    color: #ffff; 
+}
 .player1-cards{
-    float: left;
-}
-.player2-cards{
-    float: right;
-}
-.class{
-    max-width: 400px;
-    max-height: 400px;
-    
+    nav-down: auto;
 }
