@@ -18,10 +18,6 @@ var frontParent = document.getElementById("player1-cards");
  frontParent.appendChild(front);*/
 
  
-
-
-
-
 for (let index = 2; index < 15; index++) {
     cardStack.push(new Cards (index,"Hearts",back,front))
     cardStack.push(new Cards (index,"Clubs",back,front))
@@ -53,30 +49,43 @@ const player1Cards = document.getElementById("player1-cards");
 const player2Cards = document.getElementById("player2-cards");
 
 
+let card1 = null;
 
 function showCard(){
-  const card1 = document.createElement("div");
+  if (card1 !== null) {
+    card1.remove();
+  }
+  card1 = document.createElement("div")
   card1.classList.add("card");
   card1.textContent = `${Player1[i].value} of ${Player1[i].name}`;
+  card1.addEventListener("click", function() {
+    card1.remove();
+    card1 = null;
+  });  
+  
+  
   player1Cards.appendChild(card1);
-
-  if (card1.hasChildNodes()) {
-    card1.removeChild(card1.children[0]);
-  }
-
- ;
- 
+}
  /*var backParent = document.getElementById("player1-cards");
  back.id = "backid";
  back.className = "class";
  back.src = "kort/back_of_cards.png"     // back.src = "back URL/PATH"
  backParent.appendChild(back);*/
 
-}
+let card2 = null;
+
 function showCard2(){
-  const card2 = document.createElement("div");
+  if (card2 !== null) {
+    card2.remove();
+  }
+  card2 = document.createElement("div");
   card2.classList.add("card");
   card2.textContent = `${Player2[i].value} of ${Player2[i].name}`;
+  card2.addEventListener("click", function() {
+    card2.remove();
+    card2 = null;
+  }); 
+
   player2Cards.appendChild(card2);
 
   /*var back = document.createElement("img");
@@ -92,12 +101,12 @@ let i = 0
 function hvemVinder(){
 
   if (Player1[i].value < Player2[i].value){
-    console.log("2 vinder" )
+    System.out.println("2 Vinder")
     Player2.push(Player1[i])
     Player2.push(Player2[i])
     Player1.splice(i, 1);
     Player2.splice(i, 1);
-
+    
    // her skal vinderen have de mk2 indexer på sig 
   }
 
@@ -115,40 +124,59 @@ else {
 console.log(Player1)
 console.log(Player2)
 
-}
+} 
+ 
+
 function krig()
     { 
-      let button = document.createElement('button')
-      button.innerText = 'KRIG!'
-    
-      button.id = 'mainButton'
-      button.addEventListener('click', () => {
-      console.log("Hej"); })
-      
-      const but =   document.createElement("div")
+
+      let btn = document.createElement("button");
+      btn.innerHTML = "Krig";
+      document.body.appendChild(btn);
+      btn.addEventListener("click", hvemVinder)
+
+
       const card1 = document.createElement("div");
       const card2 = document.createElement("div");
+      btn.innerHTML = "Krig";
+      document.body.appendChild(btn);
+      btn.addEventListener("click", hvemVinder)
+
+      
+      
             card1.textContent = 
                 `${Player1[0].value} of 
-                ${Player1[i].name}
+                ${Player1[0].name}
                 ${Player1[1].value} of 
-                ${Player1[i].name}
+                ${Player1[1].name}
                 ${Player1[2].value} of 
-                ${Player1[i].name}`
+                ${Player1[2].name}`
           
             card2.textContent =
                 `${Player2[0].value} of 
-                ${Player2[i].name}
+                ${Player2[0].name}
                 ${Player2[1].value} of 
-                ${Player2[i].name}
+                ${Player2[1].name}
                 ${Player2[2].value} of 
-                ${Player2[i].name}`
-       but.textContent = "hej"
-      but.appendChild(button) 
+                ${Player2[2].name}`
+      
+      /*Player1.push(Player1[i])
+      Player1.push(Player2[i])
+      Player1.splice(i, 1)
+      Player2.splice(i, 1)
+
+      Player2.push(Player1[i])
+      Player2.push(Player2[i])
+      Player1.splice(i, 1);
+      Player2.splice(i, 1);*/
               
       player1Cards.appendChild(card1);
       player2Cards.appendChild(card2);
     
-      console.log("Den er connected")
+      console.log("Krig")
     }
-krig()
+    
+    
+
+    
+    
